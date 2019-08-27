@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atlanta commercial property tax discounts</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+</head>
+<body>
+<nav>
+    <img src="static/SAPORTAREPORT-white-300x40.png">
+</nav>
+<header>
+    <h1>Commercial property tax discounts in Atlanta</h1>
+</header>
+    <p>Projects in Midtown have been the biggest beneficiaries of property tax discounts put on track within the city of Atlanta in 2019 so far.</p>
+    <p>Two authorities offer such incentives in the city: Invest Atlanta and the Development Authority of Fulton County.</p>
+        Last update: August 27, 2019 </br>
+    Total value over 10 years: $170,405,593</br>
+    <div class="byline">
+    By Maggie Lee</a>
+    </div>
+
+    <div id="map" style="width:100%; height:300px;"></div>
+
+    <table border=1 cellpadding=7>
+            <tr>
+                <th>Name or address</th>
+                <th>Abatement value over 10 years</th>
+                <th class="no-priority">Project Owner</th>
+                <th class="no-priority">Purpose</th>
+                <th class="no-priority">Status</th>
+                <th class="no-priority">Authority</th>
+                <th class="no-priority">Address</th>
+            </tr>
+            
+            <tr>
+                <td> Norfolk Southern</td>
+                <td> $23,599,682</td>
+                <td class="no-priority"> Norfolk Southern</td>
+                <td class="no-priority">office</td>
+                <td class="no-priority">final bond resolution approved 17-Jan-2019</td>
+                <td class="no-priority">Invest Atlanta</td>
+                <td class="no-priority">West Peachtree Street at Ponce de Leon Avenue and Third Street </td>
+            </tr>
+            
+            <tr>
+                <td> 982 Memorial Drive</td>
+                <td> $1,982,946</td>
+                <td class="no-priority"> 982 URPDC Development LLC </td>
+                <td class="no-priority">housing, part affordable</td>
+                <td class="no-priority">final bond resolution approved 22-Jan-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">982 Memorial Drive</td>
+            </tr>
+            
+            <tr>
+                <td> Star Metals</td>
+                <td> $16,692,285</td>
+                <td class="no-priority"> Star Metals</td>
+                <td class="no-priority">housing, part affordable</td>
+                <td class="no-priority">final bond resolution approved 22-Jan-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">1050 Howell Mill Road </td>
+            </tr>
+            
+            <tr>
+                <td> 1105 West Peachtree</td>
+                <td> $16,043,768</td>
+                <td class="no-priority"> Selig Enterprises, LLC</td>
+                <td class="no-priority">hotel/office</td>
+                <td class="no-priority">final bond resolution approved 26-Feb-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">1105 West Peachtree Sreet 30309</td>
+            </tr>
+            
+            <tr>
+                <td> 900 Joseph E. Lowry</td>
+                <td> $1,491,950</td>
+                <td class="no-priority"> Lincoln Property Company / CRP/LPC Aspire Owner LLC</td>
+                <td class="no-priority">housing part affordable for 20 years</td>
+                <td class="no-priority">final bond resolution approved 26-Feb-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">900 Joseph E. Lowry Blvd NW </td>
+            </tr>
+            
+            <tr>
+                <td> Fairfield Residential</td>
+                <td> $2,619,579</td>
+                <td class="no-priority"> Fairfield Residential</td>
+                <td class="no-priority">housing, part affordable</td>
+                <td class="no-priority">final bond resolution approved 26-Feb-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">125 Milton Avenue</td>
+            </tr>
+            
+            <tr>
+                <td> Fairfield Residential</td>
+                <td> $5,586,135</td>
+                <td class="no-priority"> Fairfield Residential Company LLC</td>
+                <td class="no-priority">housing, all affordable</td>
+                <td class="no-priority">letter of inducement approved 26-Feb-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">300 block of Fair Drive and 1944 St. Johns Ave 30315</td>
+            </tr>
+            
+            <tr>
+                <td> MetLife </td>
+                <td> $57,563,608</td>
+                <td class="no-priority"> Midtown Heights, LLC - MetLife, Inc.</td>
+                <td class="no-priority">office, hotel, retail</td>
+                <td class="no-priority">letter of inducement approved 22-Jan-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">Block between 17th, W. Peachtree &amp; Spring streets</td>
+            </tr>
+            
+            <tr>
+                <td> Alta Dairies II</td>
+                <td> $2,608,732</td>
+                <td class="no-priority"> WP South Acquisitions</td>
+                <td class="no-priority">housing, part affordable</td>
+                <td class="no-priority">final bond resolution approved 26-Mar-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">777 Memorial Drive</td>
+            </tr>
+            
+            <tr>
+                <td> JDV Botique Hotel</td>
+                <td> $866,998</td>
+                <td class="no-priority"> WLKR Ponce Owner, LLC</td>
+                <td class="no-priority">hotel</td>
+                <td class="no-priority">final bond resolution approved 26-Mar-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">551 Ponce De Leon Ave</td>
+            </tr>
+            
+            <tr>
+                <td> 72 Milton Avenue SE</td>
+                <td> $2,175,400</td>
+                <td class="no-priority"> Pollack Shores Development, LLC</td>
+                <td class="no-priority">retail; housing, part affordable</td>
+                <td class="no-priority">letter of inducement approved 26-Mar-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">72 Milton Avenue SE</td>
+            </tr>
+            
+            <tr>
+                <td> 14th and Spring</td>
+                <td> $6,626,125</td>
+                <td class="no-priority"> 1150 GS Green LLC/Greenstone Ventures</td>
+                <td class="no-priority">office, retail</td>
+                <td class="no-priority">final bond resolution approved 25-Jun-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">1150 Spring Street</td>
+            </tr>
+            
+            <tr>
+                <td> 400 Bishop Street</td>
+                <td> $2,277,000</td>
+                <td class="no-priority"> 400 Bishop Master LLC</td>
+                <td class="no-priority">office, retail</td>
+                <td class="no-priority">letter of inducement approved 25-Jun-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">400 Bishop Street</td>
+            </tr>
+            
+            <tr>
+                <td> Waldo&#39;s</td>
+                <td> $3,607,373</td>
+                <td class="no-priority"> RCC, LLC</td>
+                <td class="no-priority">office, hotel, retail</td>
+                <td class="no-priority">final bond resolution approved 23-Jul-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">40 Boulevard / Gartell St / 39 Daniel St</td>
+            </tr>
+            
+            <tr>
+                <td> Goat Farm</td>
+                <td> $2,787,235</td>
+                <td class="no-priority"> Goat Farm Development, LLC</td>
+                <td class="no-priority">residential some affordable; art studios</td>
+                <td class="no-priority">final bond resolution approved 23-Jul-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">1200 Foster St</td>
+            </tr>
+            
+            <tr>
+                <td> Marriott</td>
+                <td> $4,816,773</td>
+                <td class="no-priority"> FV IV-VA Atlanta Midtown LLC / Noble Hospitality Fund IV-VA Acquisitions LLC and UGP-640 Peachtree St</td>
+                <td class="no-priority">hotel</td>
+                <td class="no-priority">final bond resolution approved 23-Jul-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">640 Peachtree St.</td>
+            </tr>
+            
+            <tr>
+                <td> 667 Auburn Ave</td>
+                <td> $3,502,937</td>
+                <td class="no-priority"> Portman O4W LLC</td>
+                <td class="no-priority">hotel, f&amp;b</td>
+                <td class="no-priority">final bond resolution approved 27-Aug-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">667 Auburn Ave</td>
+            </tr>
+            
+            <tr>
+                <td> 99 West Paces Ferry</td>
+                <td> $3,355,560</td>
+                <td class="no-priority"> JLB West Paces Ferry LLC</td>
+                <td class="no-priority">residential, retail</td>
+                <td class="no-priority">final bond resolution approved 25-Jun-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">99 West Paces Ferry</td>
+            </tr>
+            
+            <tr>
+                <td> 1454 and 1460 LaFrance St</td>
+                <td> $2,700,000</td>
+                <td class="no-priority"> Columbia Ventures, LLC</td>
+                <td class="no-priority">residential, some affordable</td>
+                <td class="no-priority">final bond resolution approved 20-Jun-2019</td>
+                <td class="no-priority">Invest Atlanta</td>
+                <td class="no-priority">1454 and 1460 LaFrance St</td>
+            </tr>
+            
+            <tr>
+                <td> 1061 Memorial Dr</td>
+                <td> $844,932</td>
+                <td class="no-priority"> Camand Capital</td>
+                <td class="no-priority">residential, some affordable</td>
+                <td class="no-priority">letter of inducement approved 16-May-2019</td>
+                <td class="no-priority">Invest Atlanta</td>
+                <td class="no-priority">1061 Memorial Dr</td>
+            </tr>
+            
+            <tr>
+                <td> 577 Englewood Ave</td>
+                <td> $1,228,992</td>
+                <td class="no-priority"> Domos Co-Living, LLC</td>
+                <td class="no-priority">residential, some affordable</td>
+                <td class="no-priority">letter of inducement approved 16-May-2019</td>
+                <td class="no-priority">Invest Atlanta</td>
+                <td class="no-priority">577 Englewood Ave</td>
+            </tr>
+            
+            <tr>
+                <td> 100 Edgewood</td>
+                <td> $3,617,983</td>
+                <td class="no-priority"> Parkway Acquisitions, LLC</td>
+                <td class="no-priority">office, some retail</td>
+                <td class="no-priority">letter of inducement approved 15-Aug-2019</td>
+                <td class="no-priority">Invest Atlanta</td>
+                <td class="no-priority">100 Edgewood</td>
+            </tr>
+            
+            <tr>
+                <td> 374 East Paces Ferry</td>
+                <td> $3,809,600</td>
+                <td class="no-priority"> Sobu Flats, LLC</td>
+                <td class="no-priority">hotel, f&amp;b</td>
+                <td class="no-priority">letter of inducement approved 27-Aug-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">374 East Paces Ferry</td>
+            </tr>
+            
+    </table>
+
+    <div><a href="static/abatements.csv" />Download data as .csv</a></div>
+
+    <script type="text/javascript">
+            var map = L.map('map', { scrollWheelZoom: false }).setView([33.78, -84.4], 11);
+            var osmLayer = new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '©OpenStreetMap, ©CartoDB'
+            });
+            map.addLayer(osmLayer);
+
+            var myStyle = {
+                "color": "#ff7800",
+                "weight": 5,
+                "opacity": 0.65
+            };
+
+
+            var data = {
+              "type": "FeatureCollection",
+              "features": [
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Norfolk Southern",
+                    "id": "1",
+                    "radius" : "27",
+                    "abatement_value" : "$23,599,682",
+                    "aka" : "Norfolk Southern"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.387485, 33.773049]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "982 URPDC Development LLC ",
+                    "id": "2",
+                    "radius" : "8",
+                    "abatement_value" : "$1,982,946",
+                    "aka" : "982 Memorial Drive"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.35515, 33.746622]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Star Metals",
+                    "id": "3",
+                    "radius" : "23",
+                    "abatement_value" : "$16,692,285",
+                    "aka" : "Star Metals"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.412157, 33.783427]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Selig Enterprises, LLC",
+                    "id": "4",
+                    "radius" : "23",
+                    "abatement_value" : "$16,043,768",
+                    "aka" : "1105 West Peachtree"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.38764, 33.784873]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Lincoln Property Company / CRP/LPC Aspire Owner LLC",
+                    "id": "5",
+                    "radius" : "7",
+                    "abatement_value" : "$1,491,950",
+                    "aka" : "900 Joseph E. Lowry"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.41783, 33.779281]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Fairfield Residential",
+                    "id": "6",
+                    "radius" : "7",
+                    "abatement_value" : "$2,619,579",
+                    "aka" : "Fairfield Residential"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.385033, 33.721594]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Fairfield Residential Company LLC",
+                    "id": "7",
+                    "radius" : "11",
+                    "abatement_value" : "$5,586,135",
+                    "aka" : "Fairfield Residential"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.400918, 33.701703]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Midtown Heights, LLC - MetLife, Inc.",
+                    "id": "8",
+                    "radius" : "34",
+                    "abatement_value" : "$57,563,608",
+                    "aka" : "MetLife "
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.388504, 33.79117]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "WP South Acquisitions",
+                    "id": "9",
+                    "radius" : "7",
+                    "abatement_value" : "$2,608,732",
+                    "aka" : "Alta Dairies II"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.361923, 33.745508]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "WLKR Ponce Owner, LLC",
+                    "id": "10",
+                    "radius" : "4",
+                    "abatement_value" : "$866,998",
+                    "aka" : "JDV Botique Hotel"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.368836, 33.773388]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Pollack Shores Development, LLC",
+                    "id": "11",
+                    "radius" : "7",
+                    "abatement_value" : "$2,175,400",
+                    "aka" : "72 Milton Avenue SE"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.386, 33.724]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "1150 GS Green LLC/Greenstone Ventures",
+                    "id": "12",
+                    "radius" : "12",
+                    "abatement_value" : "$6,626,125",
+                    "aka" : "14th and Spring"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.39, 33.786]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "400 Bishop Master LLC",
+                    "id": "13",
+                    "radius" : "7",
+                    "abatement_value" : "$2,277,000",
+                    "aka" : "400 Bishop Street"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.4, 33.794]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "RCC, LLC",
+                    "id": "14",
+                    "radius" : "9",
+                    "abatement_value" : "$3,607,373",
+                    "aka" : "Waldo&#39;s"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.372, 33.754]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Goat Farm Development, LLC",
+                    "id": "15",
+                    "radius" : "8",
+                    "abatement_value" : "$2,787,235",
+                    "aka" : "Goat Farm"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.416, 33.786]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "FV IV-VA Atlanta Midtown LLC / Noble Hospitality Fund IV-VA Acquisitions LLC and UGP-640 Peachtree St",
+                    "id": "16",
+                    "radius" : "10",
+                    "abatement_value" : "$4,816,773",
+                    "aka" : "Marriott"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.385, 33.772]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Portman O4W LLC",
+                    "id": "17",
+                    "radius" : "8",
+                    "abatement_value" : "$3,502,937",
+                    "aka" : "667 Auburn Ave"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.366, 33.757]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "JLB West Paces Ferry LLC",
+                    "id": "18",
+                    "radius" : "8",
+                    "abatement_value" : "$3,355,560",
+                    "aka" : "99 West Paces Ferry"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.383, 33.841]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Columbia Ventures, LLC",
+                    "id": "19",
+                    "radius" : "7",
+                    "abatement_value" : "$2,700,000",
+                    "aka" : "1454 and 1460 LaFrance St"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.34, 33.761]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Camand Capital",
+                    "id": "20",
+                    "radius" : "4",
+                    "abatement_value" : "$844,932",
+                    "aka" : "1061 Memorial Dr"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.353, 33.7466]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Domos Co-Living, LLC",
+                    "id": "21",
+                    "radius" : "5",
+                    "abatement_value" : "$1,228,992",
+                    "aka" : "577 Englewood Ave"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.369, 33.721]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Parkway Acquisitions, LLC",
+                    "id": "22",
+                    "radius" : "9",
+                    "abatement_value" : "$3,617,983",
+                    "aka" : "100 Edgewood"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.3855, 33.7546]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Sobu Flats, LLC",
+                    "id": "23",
+                    "radius" : "9",
+                    "abatement_value" : "$3,809,600",
+                    "aka" : "374 East Paces Ferry"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.375, 33.839]
+                  }
+                }
+                
+              ]
+            };
+
+
+            var dataLayer =
+            L.geoJSON(data, {
+
+                style : function(feature) {
+                    return feature.properties;
+                },
+
+                pointToLayer : function(feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        fillColor : "#ff7800",
+                        color : "#000",
+                        weight : 1,
+                        opacity : 1,
+                        fillOpacity : 0.8
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                layer.bindPopup(feature.properties.aka + '</br>' + feature.properties.abatement_value)
+                }
+            }).addTo(map);
+            map.addLayer(dataLayer);
+
+        </script>
+
+</body>
+</html>
