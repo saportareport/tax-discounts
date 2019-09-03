@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlanta commercial property tax discounts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+</head>
+<body>
+<nav>
+    <a href="https://saportareport.com/"><img src="{{ url_for('static', filename='SAPORTAREPORT-white-300x40.png') }}"></a>
+</nav>
+<header>
+    <h1>Commercial property tax discounts in Atlanta</h1>
+</header>
+    <p>Projects in Midtown have been the biggest beneficiaries of property tax discounts put on track within the city of Atlanta in 2019 so far.</p>
+    <p>Two authorities offer such incentives in the city: Invest Atlanta and the Development Authority of Fulton County.</p>
+<p>Check <a href="https://saportareport.com/">SaportaReport.com</a> for reporting on economic development.</p>
+        Last update: {{ latest_item }} </br>
+    Total value over 10 years: {{ total | numberFormat }}</br>
+    <div class="byline">
+    By Maggie Lee</a>
+    </div>
+
+    <div id="map" style="width:100%; height:300px;"></div>
+
+    <table border=1 cellpadding=7>
+            <tr>
+                <th>Name or address</th>
+                <th>Abatement value over 10 years</th>
+                <th class="no-priority">Project Owner</th>
+                <th class="no-priority">Purpose</th>
+                <th class="no-priority">Status</th>
+                <th class="no-priority">Authority</th>
+                <th class="no-priority">Address</th>
+            </tr>
+            {% for obj in object_list %}
+            <tr>
+                <td> {{ obj.aka }}</td>
+                <td> {{ obj.abatement_value | numberFormat }}</td>
+                <td class="no-priority"> {{ obj.proj_owner }}</td>
+                <td class="no-priority">{{ obj.purpose }}</td>
+                <td class="no-priority">{{ obj.status }} {{ obj.date_of_status }}</td>
+                <td class="no-priority">{{ obj.authority }}</td>
+                <td class="no-priority">{{ obj.geography }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+
+    <div><a href="{{ url_for('static', filename='abatements.csv') }}" />Download data as .csv</a></div>
+
+    <script type="text/javascript">
+            var map = L.map('map', { scrollWheelZoom: false }).setView([33.78, -84.4], 11);
+            var osmLayer = new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '©OpenStreetMap, ©CartoDB'
+            });
+            map.addLayer(osmLayer);
+
+            var myStyle = {
+                "color": "#ff7800",
+                "weight": 5,
+                "opacity": 0.65
+            };
+
+
+            var data = {
+              "type": "FeatureCollection",
+              "features": [
+                {% for obj in object_list %}
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "{{ obj.proj_owner }}",
+                    "id": "{{ obj._id }}",
+                    "radius" : "{{ obj.radius_of_dot }}",
+                    "abatement_value" : "{{ obj.abatement_value | numberFormat }}",
+                    "aka" : "{{ obj.aka }}"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [{{ obj.long }}, {{ obj.lat }}]
+                  }
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+              ]
+            };
+
+
+            var dataLayer =
+            L.geoJSON(data, {
+
+                style : function(feature) {
+                    return feature.properties;
+                },
+
+                pointToLayer : function(feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        fillColor : "#ff7800",
+                        color : "#000",
+                        weight : 1,
+                        opacity : 1,
+                        fillOpacity : 0.8
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                layer.bindPopup(feature.properties.aka + '</br>' + feature.properties.abatement_value)
+                }
+            }).addTo(map);
+            map.addLayer(dataLayer);
+
+        </script>
+
+</body>
+</html>
