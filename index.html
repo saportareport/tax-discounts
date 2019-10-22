@@ -27,7 +27,7 @@
     <div class="byline">
     By Maggie Lee</a>
     </div>
-     Last update: September 24, 2019 </br>
+     Last update: October 17, 2019 </br>
     <p>Midtown developments have been the biggest beneficiaries of property tax discounts put on track within the city of Atlanta in 2019 so far.</p>
     <p>Two authorities offer such incentives in the city: Invest Atlanta and the Development Authority of Fulton County.</p>
     <p>2019 coverage from <a href="https://saportareport.com/" rel="noopener">SaportaReport.com</a>:</p>
@@ -37,10 +37,10 @@
     <a href="https://saportareport.com/fulton-board-approves-property-tax-breaks-for-buckhead-midtown-developments/" rel="noopener">Fulton board approves property tax breaks for Buckhead, Midtown developments</a><br/>
     <a href="https://saportareport.com/fulton-agency-approves-nearly-100-million-in-property-tax-abatements/" rel="noopener">Fulton agency approves nearly $100 million in property tax abatements</a><br/>
 
-    <p>Total value over 10 years: $170,948,820</p>
+    <p>Total value over 10 years: $171,631,920</p>
 
 
-    <div id="map" style="width:100%; height:300px;"></div>
+    <div id="map" style="width:100%; height:400px;"></div>
 
     <table border=1 cellpadding=7>
             <tr>
@@ -283,12 +283,22 @@
                 <td class="no-priority">374 East Paces Ferry</td>
             </tr>
             
+            <tr>
+                <td> Hartsfield East Distribution Center LLC</td>
+                <td> $683,100</td>
+                <td class="no-priority"> Hartsfield East Distribution Center LLC</td>
+                <td class="no-priority">warehouse</td>
+                <td class="no-priority">letter of inducement approved 17-Oct-2019</td>
+                <td class="no-priority">Invest Atlanta</td>
+                <td class="no-priority">3705 Wilson Road</td>
+            </tr>
+            
     </table>
 
     <div><a href="static/abatements.csv" rel="noopener" >Download data as .csv</a></div>
 
     <script type="text/javascript">
-            var map = L.map('map', { scrollWheelZoom: false }).setView([33.78, -84.4], 11);
+            var map = L.map('map', { scrollWheelZoom: false }).setView([33.75, -84.4], 11);
             var osmLayer = new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
                 maxZoom: 18,
                 attribution: '©OpenStreetMap, ©CartoDB'
@@ -648,6 +658,21 @@
                   "geometry": {
                     "type": "Point",
                     "coordinates": [-84.375, 33.839]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Hartsfield East Distribution Center LLC",
+                    "id": "24",
+                    "radius" : "4",
+                    "abatement_value" : "$683,100",
+                    "aka" : "Hartsfield East Distribution Center LLC"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.386, 33.653]
                   }
                 }
                 
