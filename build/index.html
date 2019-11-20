@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlanta commercial property tax discounts</title>
+    <meta property="og:title" content="Atlanta commercial property tax discounts 2019" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saportareport.github.io/tax-discounts/" />
+    <meta property="og:image" content="https://saportareport.github.io/tax-discounts/static/tax-discounts-square.JPG" />
+
+    <title>Atlanta commercial property tax discounts 2019</title>
     <link rel="stylesheet" href="static/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -22,7 +27,7 @@
     <div class="byline">
     By Maggie Lee</a>
     </div>
-     Last update: September 24, 2019 </br>
+     Last update: November 19, 2019 </br>
     <p>Midtown developments have been the biggest beneficiaries of property tax discounts put on track within the city of Atlanta in 2019 so far.</p>
     <p>Two authorities offer such incentives in the city: Invest Atlanta and the Development Authority of Fulton County.</p>
     <p>2019 coverage from <a href="https://saportareport.com/" rel="noopener">SaportaReport.com</a>:</p>
@@ -32,10 +37,10 @@
     <a href="https://saportareport.com/fulton-board-approves-property-tax-breaks-for-buckhead-midtown-developments/" rel="noopener">Fulton board approves property tax breaks for Buckhead, Midtown developments</a><br/>
     <a href="https://saportareport.com/fulton-agency-approves-nearly-100-million-in-property-tax-abatements/" rel="noopener">Fulton agency approves nearly $100 million in property tax abatements</a><br/>
 
-    <p>Total value over 10 years: $170,948,820</p>
+    <p>Total value over 10 years: $172,731,810</p>
 
 
-    <div id="map" style="width:100%; height:300px;"></div>
+    <div id="map" style="width:100%; height:400px;"></div>
 
     <table border=1 cellpadding=7>
             <tr>
@@ -119,11 +124,11 @@
             </tr>
             
             <tr>
-                <td> MetLife </td>
+                <td> Midtown Union (MetLife) </td>
                 <td> $57,563,608</td>
                 <td class="no-priority"> Midtown Heights, LLC - MetLife, Inc.</td>
                 <td class="no-priority">office, hotel, retail</td>
-                <td class="no-priority">letter of inducement approved 22-Jan-2019</td>
+                <td class="no-priority">final bond resolution approved 19-Nov-2019</td>
                 <td class="no-priority">Development Authority of Fulton County</td>
                 <td class="no-priority">Block between 17th, W. Peachtree &amp; Spring streets</td>
             </tr>
@@ -173,7 +178,7 @@
                 <td> $2,277,000</td>
                 <td class="no-priority"> 400 Bishop Master LLC</td>
                 <td class="no-priority">office, retail</td>
-                <td class="no-priority">letter of inducement approved 25-Jun-2019</td>
+                <td class="no-priority">final bond resolution approved 22-Oct-2019</td>
                 <td class="no-priority">Development Authority of Fulton County</td>
                 <td class="no-priority">400 Bishop Street</td>
             </tr>
@@ -278,12 +283,32 @@
                 <td class="no-priority">374 East Paces Ferry</td>
             </tr>
             
+            <tr>
+                <td> Hartsfield East Distribution Center LLC</td>
+                <td> $683,100</td>
+                <td class="no-priority"> Hartsfield East Distribution Center LLC</td>
+                <td class="no-priority">warehouse</td>
+                <td class="no-priority">letter of inducement approved 17-Oct-2019</td>
+                <td class="no-priority">Invest Atlanta</td>
+                <td class="no-priority">3705 Wilson Road</td>
+            </tr>
+            
+            <tr>
+                <td> Vesta Adams Park</td>
+                <td> $1,099,890</td>
+                <td class="no-priority"> Vesta Adams Park LLC</td>
+                <td class="no-priority">housing, all affordable</td>
+                <td class="no-priority">letter of inducement approved 19-Nov-2019</td>
+                <td class="no-priority">Development Authority of Fulton County</td>
+                <td class="no-priority">1991 Delowe Drive</td>
+            </tr>
+            
     </table>
 
     <div><a href="static/abatements.csv" rel="noopener" >Download data as .csv</a></div>
 
     <script type="text/javascript">
-            var map = L.map('map', { scrollWheelZoom: false }).setView([33.78, -84.4], 11);
+            var map = L.map('map', { scrollWheelZoom: false }).setView([33.75, -84.4], 11);
             var osmLayer = new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
                 maxZoom: 18,
                 attribution: '©OpenStreetMap, ©CartoDB'
@@ -413,7 +438,7 @@
                     "id": "8",
                     "radius" : "34",
                     "abatement_value" : "$57,563,608",
-                    "aka" : "MetLife "
+                    "aka" : "Midtown Union (MetLife) "
                   },
                   "geometry": {
                     "type": "Point",
@@ -643,6 +668,36 @@
                   "geometry": {
                     "type": "Point",
                     "coordinates": [-84.375, 33.839]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Hartsfield East Distribution Center LLC",
+                    "id": "24",
+                    "radius" : "4",
+                    "abatement_value" : "$683,100",
+                    "aka" : "Hartsfield East Distribution Center LLC"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.386, 33.653]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Vesta Adams Park LLC",
+                    "id": "25",
+                    "radius" : "5",
+                    "abatement_value" : "$1,099,890",
+                    "aka" : "Vesta Adams Park"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-84.458, 33.7]
                   }
                 }
                 
