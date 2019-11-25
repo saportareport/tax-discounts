@@ -9,5 +9,5 @@ https://saportareport.github.io/tax-discounts/
 
 This site is created with Flask and Python; and I've published the files in case anyone wants to see my work.
 
-It's based on First News App, a great tutorial if you want to do similar sites: https://first-news-app.readthedocs.io/en/latest/
+It's based on First News App, which you can follow if you want to do similar sites: https://first-news-app.readthedocs.io/en/latest/
 
