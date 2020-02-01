@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlanta commercial property tax discounts</title>
+    <meta property="og:title" content="Atlanta commercial property tax discounts 2019" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saportareport.github.io/tax-discounts/" />
+    <meta property="og:image" content="https://saportareport.github.io/tax-discounts/static/tax-discounts-square.JPG" />
+
+    <title>Atlanta commercial property tax discounts 2019</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -23,10 +28,13 @@
     By Maggie Lee</a>
     </div>
      Last update: {{ latest_item }} </br>
-    <p>Midtown developments have been the biggest beneficiaries of property tax discounts put on track within the city of Atlanta in 2019 so far.</p>
+    <p>Midtown developments have been the biggest beneficiaries of property tax discounts put on track within the city of Atlanta since January, 2019.</p>
     <p>Two authorities offer such incentives in the city: Invest Atlanta and the Development Authority of Fulton County.</p>
-    <p>2019 coverage from <a href="https://saportareport.com/" rel="noopener">SaportaReport.com</a>:</p>
-<a href="https://saportareport.com/no-so-affordable-housing-project-in-buckhead-gets-3-4m-in-tax-incentives-but-why/" rel="noopener">Not-so-affordable housing project in Buckhead gets $3.4M in tax incentives. But why?</a><br/>
+    <p>Coverage from <a href="https://saportareport.com/" rel="noopener">SaportaReport.com</a>:</p>
+    <a href="https://saportareport.com/fulton-development-authority-signals-support-for-northside-drive-commercial-property-tax-abatement/" rel="noopener">Fulton development authority signals support for Northside Drive commercial property tax abatement</a><br/>
+    <a href="https://saportareport.com/fulton-panel-turns-down-buckhead-developer-seeking-incentive/" rel="noopener">Fulton panel turns down Buckhead developer seeking incentive</a><br/>
+    <a href="https://saportareport.com/atlanta-taps-the-brakes-on-some-developer-incentives-its-not-alone/" rel="noopener">Atlanta taps the brakes on some developer incentives. It's not alone.</a><br/>
+    <a href="https://saportareport.com/no-so-affordable-housing-project-in-buckhead-gets-3-4m-in-tax-incentives-but-why/" rel="noopener">Not-so-affordable housing project in Buckhead gets $3.4M in tax incentives. But why?</a><br/>
     <a href="https://saportareport.com/divided-fulton-board-approves-hotel-tax-breaks-for-buckhead-o4w/" rel="noopener">Divided Fulton board approves hotel tax breaks for Buckhead, O4W</a><br/>
     <a href="https://saportareport.com/developer-property-tax-breaks-in-hot-atlanta-neighborhoods-raising-questions/" rel="noopener">Developer property tax breaks in hot Atlanta neighborhoods raising questions</a><br/>
     <a href="https://saportareport.com/fulton-board-approves-property-tax-breaks-for-buckhead-midtown-developments/" rel="noopener">Fulton board approves property tax breaks for Buckhead, Midtown developments</a><br/>
@@ -35,7 +43,7 @@
     <p>Total value over 10 years: {{ total | numberFormat }}</p>
 
 
-    <div id="map" style="width:100%; height:300px;"></div>
+    <div id="map" style="width:100%; height:400px;"></div>
 
     <table border=1 cellpadding=7>
             <tr>
@@ -63,7 +71,7 @@
     <div><a href="{{ url_for('static', filename='abatements.csv') }}" rel="noopener" >Download data as .csv</a></div>
 
     <script type="text/javascript">
-            var map = L.map('map', { scrollWheelZoom: false }).setView([33.78, -84.4], 11);
+            var map = L.map('map', { scrollWheelZoom: false }).setView([33.75, -84.4], 11);
             var osmLayer = new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
                 maxZoom: 18,
                 attribution: '©OpenStreetMap, ©CartoDB'
